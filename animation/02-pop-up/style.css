@@ -35,11 +35,12 @@ button {
   top: 50%;
   left: 50%;
   transform-origin: center;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   pointer-events: none;
   opacity: 0%;
   text-align: center;
 }
+
 .popup-modal p {
   margin-bottom: 24px
 }
@@ -61,3 +62,41 @@ button {
   opacity: 30%;
 }
 
+
+
+/* solution */
+
+.popup-modal {
+
+  /* original */
+  /* padding: 32px 64px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  opacity: 0%;
+  text-align: center; */
+
+
+  /* added */
+  transform: translate(-50%, -150%);
+  transition-property: opacity transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.popup-modal.show {
+  /* original */
+  /* opacity: 100%;
+  pointer-events: all; */
+
+
+  /* added */
+  transform: translate(-50%, -50%);
+}
